@@ -1,0 +1,43 @@
+body {
+    color: white;
+    background: linear-gradient(321deg, #000000, #420404, #000000);
+    background-size: 1000% 1000%;
+
+-webkit-animation: AnimationName 1s ease infinite;
+-moz-animation: AnimationName 1s ease infinite;
+animation: AnimationName 1s ease infinite;
+}
+
+p {
+    font-size: 60px;
+    text-align: center;
+    line-height: 0;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-menu {
+    background-color: rgba(255, 255, 255, 0.216);
+    height: 300px;
+}
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 88%}
+    50%{background-position:100% 13%}
+    100%{background-position:0% 88%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 88%}
+    50%{background-position:100% 13%}
+    100%{background-position:0% 88%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
