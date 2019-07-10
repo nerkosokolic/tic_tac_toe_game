@@ -4,7 +4,7 @@
         - Avateur Picture
     [Play Button]
         [Single Player]-------
-                              | - [3 X 3], [6 X 6] or [9 x 9]
+                              |
         [Multiplayer]---------
 
 2. Logic -

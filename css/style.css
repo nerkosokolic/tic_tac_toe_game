@@ -1,43 +1,80 @@
 body {
-    color: white;
-    background: linear-gradient(321deg, #000000, #420404, #000000);
-    background-size: 1000% 1000%;
-
--webkit-animation: AnimationName 1s ease infinite;
--moz-animation: AnimationName 1s ease infinite;
-animation: AnimationName 1s ease infinite;
+    transition: color 0.2s linear;
 }
 
-p {
-    font-size: 60px;
-    text-align: center;
-    line-height: 0;
-
+.scoreboard-container {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    margin-top: 100px;
 }
 
-.main-menu {
-    background-color: rgba(255, 255, 255, 0.216);
-    height: 300px;
+.q {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 1px;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+    font-family: sans-serif;
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 15%;
 }
 
+.q:hover {
+    background-color: azure;
+}
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 88%}
-    50%{background-position:100% 13%}
-    100%{background-position:0% 88%}
+.winner {
+     /* -webkit-animation: glow 0.7s ease-in-out infinite alternate; */
+    /* -moz-animation: glow 0.7s ease-in-out infinite alternate; */
+    /* animation: glow 0.7s ease-in-out infinite alternate;  */
+
+    border-radius: 5%;
+    box-shadow:
+        0 0 1px 1px #fff,  /* inner white */
+        0 0 2px 2px rgb(255, 85, 255), /* middle magenta */
+        0 0 3px 3px rgb(255, 0, 76); /* outer cyan */
 }
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 88%}
-    50%{background-position:100% 13%}
-    100%{background-position:0% 88%}
-}
-@keyframes AnimationName { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
+
+.X {
+    font-size: 80px;
+    color: black;
+    text-align: center;
+    /* -webkit-animation: glow 0.7s ease-in-out infinite alternate;
+    -moz-animation: glow 0.7s ease-in-out infinite alternate;
+    animation: glow 0.7s ease-in-out infinite alternate; */
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0064e6, 0 0 40px #0064e6, 0 0 50px #0064e6, 0 0 60px #0064e6, 0 0 70px #0064e6;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #4dfff6, 0 0 40px #4dfff6, 0 0 50px #4dfff6, 0 0 60px #4dfff6, 0 0 70px #4dfff6, 0 0 80px #ff4da6;
+    }
+  }
+
+  .O {
+    font-size: 80px;
+    color: black;
+    text-align: center;
+    /* -webkit-animation: glowO 0.7s ease-in-out infinite alternate;
+    -moz-animation: glowO 0.7s ease-in-out infinite alternate;
+    animation: glowO 0.7s ease-in-out infinite alternate; */
+  }
+  
+  @-webkit-keyframes glowO {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0004ff, 0 0 40px #0004ff, 0 0 50px #0004ff, 0 0 60px #0004ff, 0 0 70px #0004ff;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #4d50ff, 0 0 40px #4d50ff, 0 0 50px #4d50ff, 0 0 60px #4d50ff, 0 0 70px #4d50ff, 0 0 80px #4d50ff;
+    }
+  }
