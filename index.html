@@ -6,22 +6,69 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class='scoreboard-container'>
-            <p>Score here</p>
+    <div class='window-container'>
+    <div class='header-container'>
+        <div class='header'> 
+            <h1 class='main-header'><span id='bolder'>Tic</span>-Tac<span id='bolder'>-</span>Toe <span id='bolder'>Arcade</span></h1>
+        </div>
     </div>
+<div class='mid-container'>
     <div class="container" id="board">
-                <div class="q" id="b0"></div>
-                <div class="q" id="b1"></div>
-                <div class="q" id="b2"></div>
-                <div class="q" id="b3"></div>
-                <div class="q" id="b4"></div>
-                <div class="q" id="b5"></div>
-                <div class="q" id="b6"></div>
-                <div class="q" id="b7"></div>
-                <div class="q" id="b8"></div>
+                <div class="cube" id="b0"></div>
+                <div class="cube" id="b1"></div>
+                <div class="cube" id="b2"></div>
+                <div class="cube" id="b3"></div>
+                <div class="cube" id="b4"></div>
+                <div class="cube" id="b5"></div>
+                <div class="cube" id="b6"></div>
+                <div class="cube" id="b7"></div>
+                <div class="cube" id="b8"></div>
     </div>
+    <div class='notifications'>kdjf</div>
+</div>
+
+    <div class='scoreboard'>
+        <div class='headers'>
+            <div class='scoreboard-header'>ID</div>
+            <div class='scoreboard-header'>Player Name</div>
+            <div class='scoreboard-header'>Score</div>
+        </div>
+        <div class='headers'>
+            <div class='p1-rank'>00001</div>
+            <div class='p1-name player'>Bob Smith</div>
+            <div class='p1-score'>0</div>
+        </div>
+        <div class='headers'>
+            <div class='p2-rank'>00002</div>
+            <div class='p2-name player'>CYberFunk</div>
+            <div class='p2-score'>0</div>
+        </div>
+    </div>
+    
+    <div id="myModal" class="modal">
+            <div class="modal-content">
+              <div class="close">Welcome</div>
+              <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class='playername' id='p1name' type="text" placeholder="Player1 Name">
+              <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class='playername' id='p2name' type="text" placeholder="Player2 Name">
+              <button id='start-button'>Ready</button>
+            </div>
+    </div>
+
+    <div id="myConsole" class="console">
+            <div class="console-content">
+                <div class="console-text">Microsoft Windows [Version 10.0.177894]<br> (c) 2018 Microsoft Corperation. All Rights Reserved</div>
+                    <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id='console-input' type='text'>
+            </div>
+    </div>
+    <audio id='clickSound'><source src='sounds/select.mp3' type='audio/mp3'></audio>
+    <audio id='winSound'><source src='sounds/win.mp3' type='audio/mp3'></audio>
+    <audio id='firstBlood'><source src='sounds/1.mp3' type='audio/mp3'></audio>
+    
+
 </body>
 <script src='js/app.js'></script>
 </html>
