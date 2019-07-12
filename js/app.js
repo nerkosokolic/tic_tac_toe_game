@@ -17,7 +17,12 @@ var checkWinner = function (winningArrays) {
 
             if (playerOneScore + playerTwoScore === 1) {
                 firstSound.play()
+            } else if (playerOneScore + playerTwoScore === 2) {
+                perfectSound.play()
+            } else if (playerOneScore + playerTwoScore === 3) {
+                unstoppableSound.play()
             }
+            showHideNote('Winner');
             document.querySelector('.p1-score').innerText = playerOneScore;
             document.querySelector('.p2-score').innerText = playerTwoScore;
             setTimeout(function (){
@@ -56,6 +61,7 @@ var playerTurn = function (event) {
         if (event.target.innerHTML === ''){
             event.target.innerHTML = marker;
             if (counter === 8) {
+                showHideNote('Draw');
                 setTimeout(function(){
                     newRound();
                 },3000) 
@@ -76,6 +82,8 @@ d.forEach(function (box){
 var clickSound = document.getElementById("clickSound") 
 var winSound = document.getElementById('winSound')
 var firstSound = document.getElementById('firstBlood');
+var perfectSound = document.getElementById('perfect');
+var unstoppableSound = document.getElementById('unstoppable');
 
 var playerOneName = ""
 var playerTwoName = ""
@@ -155,23 +163,36 @@ consoleInput.addEventListener('keyup', function (event){
             consoleText.innerHTML += '<br> ...'
             setTimeout(function(){
                 consoleText.innerHTML += '<br> ...'
-                    consoleText.innerHTML += '<br>___________________'
+                    consoleText.innerHTML += "<br> === Player Move === === Computer Move ==="
+                    consoleText.innerHTML += '<br>___________________     ___________________'
                     consoleText.innerHTML += '<br>'
-                    consoleText.innerHTML += '<br> |   X  | - - -| - - |'
+                    consoleText.innerHTML += "<br> | -<span class='color'>X</span>-  | - - -| - - |      | -<span class='color'>X</span>-  | - - -| - - |"
                     consoleText.innerHTML += '<br>'
-                    consoleText.innerHTML += '<br> | - -| - - -| - - |'
+                    consoleText.innerHTML += "<br> | - -  | - - -| - - |      | - -  | - <span style='color:red'>O</span> -| - - |"
                     consoleText.innerHTML += '<br>'
-                    consoleText.innerHTML += '<br> | - -| - - -| - - |'
+                    consoleText.innerHTML += '<br> | - -  | - - -| - - |      | - -  | - - -| - - |'
                     consoleText.innerHTML += '<br>'
-                    consoleText.innerHTML += '<br> | - -| - - -| - - |'
+                    consoleText.innerHTML += '<br> | - -  | - - -| - - |      | - -  | - - -| - - |'
                     consoleText.innerHTML += '<br>'
-                    consoleText.innerHTML += '<br> | - -| - - -| - - |'
-                    consoleText.innerHTML += '<br>___________________'
+                    consoleText.innerHTML += '<br> | - -  | - - -| - - |      | - -  | - - -| - - |'
+                    consoleText.innerHTML += '<br>___________________      ___________________'
             },2000);
         }
         }
 }
 )
 
+var note = document.querySelector('.notification-msg')
+
+var showHideNote = function(outcome){
+    note.style.display = 'block';
+    note.innerText = outcome;
+    note.classList.add('swing-in-top-fwd');
+    setTimeout(function(){
+        note.classList.remove('swing-in-top-fwd');
+        note.style.display = 'none'
+    },3000)
+    
+}
 
 window.onload = consoleModal()
